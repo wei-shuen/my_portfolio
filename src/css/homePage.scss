@@ -1,0 +1,191 @@
+$outlineColor: red;
+$primaryColor_Green_100: #2E4E43;
+$subColor_Green_200: #718878;
+$subColor_Green_300: #C4D0CE;
+$subColor_Green_400: #103025;
+
+$fontSize_48: 48px;
+$fontSize_20: 20px;
+$fontSize_16: 16px;
+$fontSize_14: 14px;
+$fontSize_12: 12px;
+
+
+
+$fontFamily: "Quattrocento, SF Pro Display";
+
+// h1 {
+//   color: $outlineColor;
+// }
+
+* {
+    outline: 1px solid $outlineColor;
+}
+
+.header {
+  min-width: 375px;
+  width: 100%;
+}
+
+.menuBtn {
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.searchBtn {
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.title {
+  min-width: 279px;
+  width: calc(100% - 96px);
+  margin: 0;
+  padding: 0.78125rem 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "Quattrocento";
+  font-weight: bold;
+  color: $primaryColor_Green_100;
+  font-size: $fontSize_20;
+  text-align: center;
+}
+
+svg {
+  fill: $primaryColor_Green_100;
+  display: block;
+}
+
+.banner {
+  width: 100%;
+  color: #ffffff;
+  position: relative;
+}
+
+.seo {
+  font-family: "SF Pro Display";
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: $subColor_Green_400;
+  color: #ffffff;
+  z-index: 1;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.seo .seoCta {
+  color: #ffffff;
+}
+
+.bannerImage {
+  width: 100%;
+}
+
+.bannerTitle {
+  font-family: "SF Pro Display";
+  font-size: $fontSize_14;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: calc(50% - 50px);
+  left:0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.bannerSubTitle {
+  font-family: "SF Pro Display";
+  font-size: $fontSize_20;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left:0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.bannerBackground {
+  width: 100%;
+  position: relative;
+}
+
+.bannerCta {
+  font-family: "SF Pro Display";
+  background-color: $primaryColor_Green_100;
+  color: #ffffff;
+  font-weight: 400;
+  padding: 0.5rem 2rem;
+  border: none;
+  position: absolute;
+  bottom: calc(40% - 50px);
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.banner .slick-prev {
+  z-index: 1;
+  left: 20px;
+}
+
+.banner [dir='rtl'] .slick-prev
+{
+  right: 20px;
+  left: auto;
+}
+
+.banner .slick-next
+{
+  right: 20px;
+}
+.banner [dir='rtl'] .slick-next
+{
+  right: auto;
+  left: 20px;
+}
+
+.banner .slick-dots {
+  bottom: 10px;
+}
+
+.category {
+  padding: 20px 25px;
+  position: relative;
+}
+
+.categoryBackground {
+  padding: 10px;
+}
+
+.categoryTitle {
+  font-family: "SF Pro Display";
+  color: $primaryColor_Green_100;
+  margin: 0;
+  font-size: $fontSize_20;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.category .slick-prev:before,
+.category .slick-next:before {
+  color: $subColor_Green_300;
+}
+
+.categoryImage {
+  width: 100%;
+}
+
+.categoryName {
+  text-align: center;
+}
