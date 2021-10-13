@@ -1,9 +1,9 @@
 import React from 'react';
-import HomePage from './js/Home';
+
 
 const App = () => {
   return (
-    <HomePage />
+    <div>123</div>
   );
 };
 

@@ -350,13 +350,3 @@ template {
 [hidden] {
   display: none;
 }
-
-@font-face {
-  font-family: "Quattrocento";
-  src: url("../font/Quattrocento-Bold.ttf");
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("../font/SF-Pro-Display-Regular.otf");
-}
