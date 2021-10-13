@@ -7,10 +7,10 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve('./public'),
+    path: path.resolve('./build'),
   },
   devServer: {
-    static: './public',
+    static: './build',
   },
   devtool: 'inline-source-map',
   module: {
