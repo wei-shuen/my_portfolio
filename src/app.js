@@ -1,9 +1,12 @@
 import React from 'react';
+import Home from './js/home';
 
 
 const App = () => {
   return (
-    <div>THIS IS WEI SHUEN'S PORTFOLIO</div>
+    <div className="container">
+      <Home />
+    </div>
   );
 };
 
