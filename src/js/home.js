@@ -9,9 +9,13 @@ const Home = () => {
     <div>
       {/* header */}
       <header className="header">
-        <div className="header_logo"><Logo width={32} height={32} /></div>
+        <div className="header_logo">
+          <Logo width={32} height={32} />
+        </div>
         <h1 className="header_title">WEI-SHUEN</h1>
-        <div className="header_menu"><Menu width={32} height={32} /></div>
+        <div className="header_menu">
+          <Menu width={32} height={32} />
+        </div>
       </header>
 
       {/* brief */}
