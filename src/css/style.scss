@@ -1,4 +1,6 @@
-@import url('https://fonts.cdnfonts.com/css/roboto');
+// @import url('http://fonts.cdnfonts.com/css/roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100i,300,300i,400,400i,500,500i,700,700i&display=swap');
+
 // color
 $primary-color: #F5F2EF;
 $secondary-pink-color: #F1E9E0;
@@ -7,7 +9,7 @@ $secondary-beige-color: #F1E9E0;
 $secondary-light-gray-color: #DEDDD8;
 
 // font
-$fontFamily: 'Roboto';
+$fontFamily: 'Roboto', sans-serif;
 $web-bold-weight: 700;
 
 // web
@@ -30,7 +32,7 @@ $mobile-header-size: 18px;
 $mobile-primay-size: 16px;
 
 $mobile-title-size: 24px;
-$mobile-introduction-large-size: 44px;
+$mobile-introduction-large-size: 40px;
 $mobile-introduction-medium-size: 22px;
 $mobile-introduction-small-size: 18px;
 
@@ -42,30 +44,35 @@ $mobile-copyright-size: 12px;
 
 
 @mixin pad {
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     @content;
   }
 }
+
 @mixin mobile {
-  @media (max-width:375px) {
+  @media (max-width: 390px) {
     @content;
   }
 }
 
 html {
-  @include mobile {
-    min-width: 375px;
+  @include pad {
+    min-width: 320px;
   }
 }
 
 body {
+  padding: 0 16px;
   background-color: $primary-color;
   font-family: $fontFamily;
+  
 }
 
+// Header 區塊
 .header {
   padding: 8px 0;
-  @include mobile {
+  
+  @include pad {
     position: relative;
     text-align: center;
     margin-bottom: 24px;
@@ -85,7 +92,7 @@ body {
   vertical-align: middle;
   color: $secondary-dark-gray-color;
 
-  @include mobile {
+  @include pad {
     font-size: $mobile-header-size;
   }
 }
@@ -99,8 +106,8 @@ body {
   cursor: pointer;
 }
 
-.brief {
-  padding: 0 20px;
+// Brief 區塊
+.container {
   color: $secondary-dark-gray-color;
 }
 
@@ -113,14 +120,14 @@ body {
 }
 
 .brief_content {
-  @include mobile {
+  @include pad {
     text-align: center;
   }
 }
 
 .brief_welcome {
   margin-bottom: 16px;
-  @include mobile {
+  @include pad {
     font-size: $mobile-introduction-medium-size;
   }
 }
@@ -128,15 +135,55 @@ body {
 .brief_name {
   margin-bottom: 16px;
   font-weight: $web-bold-weight;
-  @include mobile {
+  @include pad {
     font-size: $mobile-introduction-large-size;
+    text-align: left;
   }
 }
 
 .brief_description {
   line-height: 150%;
   margin-bottom: 16px;
-  @include mobile {
+  @include pad {
     font-size: $mobile-introduction-small-size;
+    text-align: left;
   }
+}
+
+// Content 區塊
+.content_title {
+  text-align: center;
+  font-weight: $web-bold-weight;
+
+  @include mobile {
+    margin: 24px 0;
+    font-size: $mobile-section-size;
+  }
+}
+
+.content_tags {
+  width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tags {
+  color: #ffffff;
+  // fix
+  width: calc((100% - 100px) / 2);
+  padding: 12px 20px;
+  text-align: center;
+  border-radius: 35px;
+  background-color: #DBC8C7;
+  font-size: $mobile-primay-size;
+  font-weight: $web-bold-weight;
+  &:hover {
+    background-color: #BE9F9D;
+    cursor: pointer;
+  }
+}
+
+.tags.checked {
+  background-color: #BE9F9D;
 }

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Logo from './icon/logo.js';
 import Menu from './icon/menu.js';
 import Portrait from '../image/portrait.png';
+import Tag from './component/tag.js';
 
 
 const Home = () => {
+  const [tag_value, setTagValue] = useState('web');
+
   return (
     <div>
       {/* header */}
@@ -19,7 +22,7 @@ const Home = () => {
       </header>
 
       {/* brief */}
-      <section className="brief">
+      <section className="container">
         <div className="brief_portrait">
           <img className="img_portrait" src={Portrait} alt="protrait" />
         </div>
@@ -31,6 +34,16 @@ const Home = () => {
       </section>
       
       {/* content */}
+      <section className="container">
+        <h3 className="content_title">Projects</h3>
+        <div className='content_tags'>
+          <Tag name="Web project" checked={tag_value === 'web'} onClick={() => setTagValue('web')} />
+          <Tag name="UI/UX" checked={tag_value === 'uiux'} onClick={() => setTagValue('uiux')}/>
+          <Tag name="Graphic" checked={tag_value === 'graphic'} onClick={() => setTagValue('graphic')}/>
+          <Tag name="Workshop" checked={tag_value === 'workshop'} onClick={() => setTagValue('workshop')}/>
+        </div>
+
+      </section>
 
       {/* footer */}
     </div>
