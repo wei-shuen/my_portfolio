@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from './js/home';
+import Works from './js/pages/works'
 
 
 const App = () => {
   return (
-    <div className="container">
-      <Home />
+    <div>
+      <Works />
     </div>
   );
 };
