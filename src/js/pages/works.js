@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import _ from 'lodash';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -15,6 +15,7 @@ import NavBar from '../components/NavBar';
 import Card from '../components/ProjectCard';
 
 import Portrait from '../../image/image.png';
+import Data from '../source/data';
 
 const Item = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -32,23 +33,24 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      style={{ display: 'flex' }} 
       {...other}
     >
-      {value === index && <>{children}</>}
+      <Grid container>
+        {value === index && <>{children}</>}
+      </Grid>
     </div>
   );
 }
 
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  index: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 
 const Works = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState('web-app');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -56,7 +58,6 @@ const Works = () => {
   return (
     <Box>
       <Container maxWidth="md">
-        <CssBaseline />
         {/* Nav */}
         <NavBar />
         {/* Portrait */}
@@ -85,25 +86,24 @@ const Works = () => {
           sx={{ flexGrow: 1 }}
         >
           <Grid container spacing={2}>
+            {/* Tabs */}
             <Grid xs={12}>
               <Tabs value={value} onChange={handleChange} centered>
-                <Tab label="Web/App" />
-                <Tab label="Graphic" />
-                <Tab label="Workshop" />
+                <Tab label="Web/App" value="web-app" />
+                <Tab label="Graphic" value="graphic" />
+                <Tab label="Workshop" value="workshop" />
               </Tabs>
             </Grid>
+            {/* Tab Item */}
             <Grid xs={12}>
-              <TabPanel value={value} index={0}>
-                <Card />
-                <Card />
-                <Card />
+              <TabPanel value={value} index={'web-app'}>
+                {_.map(Data.web_app_projects, (pr)=> <Card data={pr} key={pr.name} />)}
               </TabPanel>
-              <TabPanel value={value} index={1}>
-                <Card />
-                <Card />
+              <TabPanel value={value} index={'graphic'}>
+                {_.map(Data.graphic_projects, (pr)=> <Card data={pr} key={pr.name} />)}
               </TabPanel>
-              <TabPanel value={value} index={2}>
-                <Card />
+              <TabPanel value={value} index={'workshop'}>
+                {_.map(Data.workshop_projects, (pr)=> <Card data={pr} key={pr.name} />)}
               </TabPanel>
             </Grid>
           </Grid>

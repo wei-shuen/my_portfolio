@@ -1,29 +1,52 @@
 import * as React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+import _ from 'lodash';
 import Grid from '@mui/material/Unstable_Grid2';
-
-// import Card from '@mui/material/Card';
-import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 const Item = styled('div')(({ theme }) => ({
-  ...theme.typography.body2,
+  // ...theme.typography.body2,
   padding: theme.spacing(1),
+}));
+
+const Year = styled(Typography)(({ theme }) => ({
+  color: '#4F4F4D',
+  fontWeight: '600',
+}));
+
+const Name = styled(Typography)(({ theme }) => ({
+  color: '#1480FF',
+  fontWeight: '600',
+  marginBottom: theme.spacing(2),
+}));
+
+const Tag = styled(Chip)(({ theme }) => ({
+  color: '#FFA114',
+  borderColor: '#FFA114',
 }));
 
 
 function ProjectCard(props) {
   return (
     <Grid xs={12} sm={6} md={4} >
-      <CssBaseline />
       <Item>
-        <div>
-          123
-        </div>
+          <img src={props.data.path} style={{ width: '100%' }} />
+          <Year variant="caption">{props.data.year}</Year>
+          <Name variant="h6">{props.data.name}</Name>
+          <Stack direction="row" spacing={1}>
+            {_.map(props.data.tags, (tag, index)=> <Tag key={tag+'_'+index} label={tag} variant="outlined" size="small" />)}
+          </Stack>
       </Item>
     </Grid>
   );
 }
+
+ProjectCard.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
 
 export default ProjectCard;
