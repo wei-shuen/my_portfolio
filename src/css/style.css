@@ -1,4 +1,4 @@
 * {
-  outline: 1px solid red;
-  font-family: 'Kulim Park', 'Roboto', sans-serif;
+  /* outline: 1px solid red; */
+  font-family: 'Kulim Park', 'Roboto', sans-serif !important;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Works from './js/pages/works'
+import Works from './js/pages/Works';
 
 
 const App = () => {
