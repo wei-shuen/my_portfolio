@@ -1,4 +1,6 @@
 import ProjectThumbnail from '../../image/project_1.jpg'
+import Resume from '../../files/resume.pdf'
+
 
 const Data = {
 	web_app_projects: [
@@ -50,6 +52,20 @@ const Data = {
 			link: 'https://www.behance.net/gallery/122954877/UX-Workshop-UX-Campus-Market'
 		}
 	],
+	navItems: [
+		{
+			name: 'WORKS',
+			link: '../'
+		},
+		{
+			name: 'ARTICLES',
+			link: 'https://medium.com/@weishuen113/'
+		},
+		{
+			name: 'RESUME',
+			link: Resume,
+		}
+	]
 };
 
 export default Data;

@@ -2,3 +2,7 @@
   /* outline: 1px solid red; */
   font-family: 'Kulim Park', 'Roboto', sans-serif !important;
 }
+
+.ws_pr_card:hover .ws_pr_name {
+  text-decoration: underline;
+}

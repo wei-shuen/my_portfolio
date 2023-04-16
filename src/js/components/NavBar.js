@@ -14,9 +14,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 import Logo from '../../image/Logo.svg';
+import Data from '../source/data';
+
 
 const drawerWidth = 240;
-const navItems = ['Works', 'Articles', 'Resume'];
 
 function NavBar(props) {
   const { window } = props;
@@ -31,10 +32,10 @@ function NavBar(props) {
       <Typography variant="h6" sx={{ my: 2 }}>WEI-SHUEN</Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+        {Data.navItems.map((item) => (
+          <ListItem key={item.name} disablePadding>
+            <ListItemButton href={item.link} sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -74,9 +75,9 @@ function NavBar(props) {
         </Typography>
 
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-          {navItems.map((item) => (
-            <Button key={item} sx={{ color: '#252525' }}>
-              {item}
+          {Data.navItems.map((item) => (
+            <Button key={item.name} sx={{ color: '#252525' }} href  ={item.link}>
+              {item.name}
             </Button>
           ))}
         </Box>
