@@ -69,7 +69,7 @@ const Data = {
 	navItems: [
 		{
 			name: 'WORKS',
-			link: '../'
+			link: '/'
 		},
 		{
 			name: 'ARTICLES',
