@@ -13,6 +13,7 @@ import Tab from '@mui/material/Tab';
 
 import NavBar from '../components/NavBar';
 import Card from '../components/ProjectCard';
+import Footer from '../components/Footer';
 
 import Portrait from '../../image/image.png';
 import Data from '../source/data';
@@ -109,6 +110,8 @@ const Works = () => {
           </Grid>
         </Box>
       </Container>
+      {/* Footer */}
+      <Footer />
     </Box>
   );
 };
